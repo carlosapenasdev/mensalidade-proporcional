@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	
+	<title>
+		Calculadora Mensalidade Escolar
+	</title>
+	
+	<link rel="apple-touch-icon" href="assets/images/favicon/152x152.png">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon/favicon-32x32.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+
+	<link rel="stylesheet" type="text/css" href="assets/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/charts-sparkline.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+	<style type="text/css">
+		.teste-footer
+		{
+			
+		}
+	</style>
+
+</head>
+
+<body class="vertical-layout page-header-light vertical-menu-collapsible vertical-menu-nav-dark 2-columns" data-open="click" data-menu="vertical-menu-nav-dark" data-col="2-columns">
+
+	<div id="main" class="main-full">
+		<div class="row">
+			<div class="col s12">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12">
+								<h5 >Calculadora Mensalidade Escolar</h5>
+								<p class="caption">
+									Qual atitudes a escola de seu filho tomou com o retorno das aulas?
+								</p>
+								<p>
+									<ul style="padding-left: 3%">
+										<li style="list-style-type: circle !important">
+											Aumentou ou reduziu o tempo em sala de aula?
+										</li>
+										<li style="list-style-type: circle !important">
+											Incrementou ou descontou a diferença de tempo à mensalidade?
+										</li>
+									</ul>
+								</p>
+								<p>
+									Esta calcularoda serve para demonstrar de forma simples se a mensalidade que você paga atualmente está proporcional ao que era oferecido
+									antes da pandemia de COVID-19.
+								</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 l6">
+				<div class="card">
+					<div class="card-content">
+
+						<div class="row">
+							<div class="col s12">
+								<h4 class="card-title">Antes pandemia</h4>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="input-field col s6">
+								<input id="entrada_a" name="entrada_a" type="text" class="validate mask-hora" required="required" value="13:00">
+								<label for="entrada_a" class="">Horário de Entrada*</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="saida_a" name="saida_a" type="text" class="validate mask-hora" required="required" value="17:40">
+								<label for="saida_a" class="">Horário de Saída*</label>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="mensalidade_a" name="mensalidade_a" value="530.00" type="text" class="validate mask-real" required="required">
+								<label for="mensalidade_a" class="">Mensalidade*</label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col s12 l6">
+				<div class="card">
+					<div class="card-content">
+
+						<div class="row">
+							<div class="col s12">
+								<h4 class="card-title">Atualmente</h4>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s6">
+								<input id="entrada_b" name="entrada_b" type="text" class="validate mask-hora" required="required" value="13:30">
+								<label for="entrada_b" class="">Horário de Entrada*</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="saida_b" name="saida_b" type="text" class="validate mask-hora" required="required" value="16:00">
+								<label for="saida_b" class="">Horário de Saída*</label>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="mensalidade_b" name="mensalidade_b" value="590.00" type="text" class="validate mask-real" required="required">
+								<label for="mensalidade_b" class="">Mensalidade*</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center mt-2 mb-2">
+				<button class="btn btn-large waves-effect waves-light green darken-1 calcular">Calcular</button>
+			</div>
+		</div>
+		<div class="row" id="resultado" style="display: none;">
+			<div class="col s12">
+				<div class="container">
+					<div class="section" id="materialize-sparkline">
+
+						<div class="row">
+							<div class="col s12 m6 l4">
+								<div class="ct-chart card z-depth-2 border-radius-6">
+									<div class="card-content">
+										<div class="row tempo_aula">
+											<div class="col s12">
+												<h4 class="card-title">Tempo de aula</h4>
+											</div>
+											<div class="col s12">
+												<p class="mt-4 black-text accent-2 cor-texto">
+													<i class="material-icons dp48 vertical-align-bottom" style="font-size: 3em">arrow_upward</i>
+													<span class="tipo_diferenca black-text accent-2">9504</span>
+													<span class="porcentagem_diferenca" style="font-size: 2em;">9504</span>
+													<span class="tipo_dado black-text accent-2">9504</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col s12 m6 l4">
+								<div class="ct-chart card z-depth-2 border-radius-6">
+									<div class="card-content">
+										<div class="row valor_mensalidade">
+											<div class="col s12">
+												<h4 class="card-title">Percentil Mensalidade atual</h4>
+											</div>
+											<div class="col s12">
+												<p class="mt-4 black-text accent-2 cor-texto">
+													<i class="material-icons dp48 vertical-align-bottom" style="font-size: 3em">arrow_upward</i>
+													<span class="tipo_diferenca black-text accent-2">9504</span>
+													<span class="porcentagem_diferenca" style="font-size: 2em;">9504</span>
+													<span class="tipo_dado black-text accent-2">9504</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col s12 m6 l4">
+								<div class="ct-chart card z-depth-2 border-radius-6">
+									<div class="card-content">
+										<div class="row mensalidade_proporcional">
+											<div class="col s12">
+												<h4 class="card-title">Mensalidade Proporcional</h4>
+											</div>
+											<div class="col s12 light-green-text">
+												<p class="mt-4 black-text accent-2 cor-texto">
+													<i class="material-icons dp48 vertical-align-bottom" style="font-size: 3em">arrow_upward</i>
+													<span class="tipo_diferenca black-text accent-2">9504</span>
+													<span class="porcentagem_diferenca" style="font-size: 2em;">9504</span>
+													<span class="tipo_dado black-text accent-2">9504</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="page-footer footer footer-static footer-dark gradient-45deg-blue-grey-blue-grey-invert gradient-shadow navbar-border navbar-shadow teste-footer">
+		<div class="footer-copyright">
+			<div class="container">
+				<span class="right">Projetado e Desenvolvido por <a href="https://www.linkedin.com/in/carlossantoswd/">Carlos Santos</a></span>
+			</div>
+		</div>
+	</footer>
+
+	<script src="assets/js/vendors.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.sparkline.min.js" type="text/javascript"></script>
+	<script src="assets/js/custom-script.js" type="text/javascript"></script>
+	<script src="assets/js/charts-sparklines.js" type="text/javascript"></script>
+	<script src="assets/js/cleave.min.js" type="text/javascript"></script>
+	<script src="assets/js/mascaras.js" type="text/javascript"></script>
+	<script src="assets/js/moment.js" type="text/javascript"></script>
+	<script src="assets/js/moment-with-locales.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+		
+		$( document ).ready(function()
+		{
+			$('#resultado').hide();
+			$('.mask-real').focusin(function() {
+
+				if($(this).val() == '0.00')
+					$(this).val('');
+			});
+
+			$('.calcular').click(function() {
+
+				calcularTempo();
+				calcularMensalidade();
+				calcularMensalidadeProporcional();
+				$('#resultado').show('slow','swing');
+
+				$([document.documentElement, document.body]).animate({
+					scrollTop: $("#resultado").offset().top
+				}, 2000);
+
+			});
+
+
+		});
+
+		var situacaoTempo = true;
+
+		function calcularTempo()
+		{
+			let entrada_a 				= moment('2021-01-01 '+$('#entrada_a').val());
+			let saida_a 				= moment('2021-01-01 '+$('#saida_a').val());
+			var duracao_a 				= moment.duration(saida_a.diff(entrada_a)).asMinutes();
+
+			let entrada_b 				= moment('2021-01-01 '+$('#entrada_b').val());
+			let saida_b 				= moment('2021-01-01 '+$('#saida_b').val());
+			var duracao_b 				= moment.duration(saida_b.diff(entrada_b)).asMinutes();
+			
+			let perc_diferenca_tempo 	= 0;
+
+			if(duracao_a > duracao_b)
+			{
+				situacaoTempo = false;
+				perc_diferenca_tempo 	= (((duracao_a-duracao_b)/duracao_a)*100).toFixed(2);
+
+				$('.tempo_aula .dp48').html('arrow_downward');
+
+				$('.tempo_aula .tipo_diferenca').html('Redução de');
+				$('.tempo_aula .porcentagem_diferenca').html(perc_diferenca_tempo+'% ');
+				$('.tempo_aula .tipo_dado').html('no tempo total');
+				$('.tempo_aula .cor-texto')
+				.removeClass('black-text')
+				.removeClass('orange-text')
+				.removeClass('green-text')
+				.addClass('orange-text');
+			}
+			else
+			{
+				situacaoTempo = true;
+				perc_diferenca_tempo 	= (((duracao_b/duracao_a)-1)*100).toFixed(2);
+
+				$('.tempo_aula .dp48').html('arrow_upward');
+
+				$('.tempo_aula .tipo_diferenca').html('Aumento de');
+				$('.tempo_aula .porcentagem_diferenca').html(perc_diferenca_tempo+'% ');
+				$('.tempo_aula .tipo_dado').html('no tempo total');
+
+				$('.tempo_aula .cor-texto')
+				.removeClass('black-text')
+				.removeClass('orange-text')
+				.removeClass('green-text')
+				.addClass('green-text');
+			}
+
+			return perc_diferenca_tempo;
+		}
+
+		function calcularMensalidade()
+		{
+			let mensalidade_a = $('#mensalidade_a').val()
+			let mensalidade_b = $('#mensalidade_b').val()
+
+			if(mensalidade_a > mensalidade_b)
+			{
+				let perc_diferenca_mensalidade 	= ((1-(mensalidade_b/mensalidade_a))*100).toFixed(2);
+
+				$('.valor_mensalidade .dp48').html('arrow_downward');
+
+				$('.valor_mensalidade .tipo_diferenca').html('Redução de');
+				$('.valor_mensalidade .porcentagem_diferenca').html(perc_diferenca_mensalidade+'% ');
+				$('.valor_mensalidade .tipo_dado').html('em relação ao ano anterior');
+
+				$('.valor_mensalidade .cor-texto')
+				.removeClass('black-text')
+				.removeClass('red-text')
+				.removeClass('green-text')
+				.addClass('green-text');
+			}
+			else
+			{
+				let perc_diferenca_mensalidade 	= (((mensalidade_b/mensalidade_a)-1)*100).toFixed(2);
+
+				$('.valor_mensalidade .dp48').html('arrow_upward');
+
+				$('.valor_mensalidade .tipo_diferenca').html('Aumento de');
+				$('.valor_mensalidade .porcentagem_diferenca').html(perc_diferenca_mensalidade+'% ');
+				$('.valor_mensalidade .tipo_dado').html('em relação ao ano anterior');
+
+				$('.valor_mensalidade .cor-texto')
+				.removeClass('black-text')
+				.removeClass('red-text')
+				.removeClass('green-text')
+				.addClass('red-text');
+
+			}
+		}
+
+		function calcularMensalidadeProporcional()
+		{
+			diff_tempo = parseFloat(calcularTempo());
+			let mensalidade_a = $('#mensalidade_a').val()
+			
+			if(situacaoTempo)
+			{
+				mensalidade_proporcional = (mensalidade_a*(1+(diff_tempo/100))).toFixed(2);
+
+				$('.mensalidade_proporcional .dp48').html('arrow_upward');
+
+				$('.mensalidade_proporcional .tipo_diferenca').html('Mensalidade deveria ser aumentada para');
+				$('.mensalidade_proporcional .porcentagem_diferenca').html('R$'+mensalidade_proporcional+' ');
+				$('.mensalidade_proporcional .tipo_dado').html('');
+				$('.mensalidade_proporcional .cor-texto')
+				.removeClass('black-text')
+				.removeClass('orange-text')
+				.removeClass('green-text')
+				.addClass('green-text');
+			}
+			else
+			{
+				mensalidade_proporcional = (mensalidade_a*(1-(diff_tempo/100))).toFixed(2);
+
+				$('.mensalidade_proporcional .dp48').html('arrow_downward');
+
+				$('.mensalidade_proporcional .tipo_diferenca').html('Mensalidade deveria ser reduzida para');
+				$('.mensalidade_proporcional .porcentagem_diferenca').html('R$'+mensalidade_proporcional+' ');
+				$('.mensalidade_proporcional .tipo_dado').html('');
+				$('.mensalidade_proporcional .cor-texto')
+				.removeClass('black-text')
+				.removeClass('orange-text')
+				.removeClass('green-text')
+				.addClass('orange-text');
+			}
+		}
+
+	</script>
+
+</body>
+</html>
