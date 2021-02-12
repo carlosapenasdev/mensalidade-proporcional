@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 	
 	<title>
-		Calculadora Mensalidade Escolar
+		Mensalidade proporcional
 	</title>
 	
 	<link rel="apple-touch-icon" href="assets/images/favicon/152x152.png">
@@ -22,9 +22,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
 	<style type="text/css">
-		.teste-footer
+		#materialize-sparkline .card-content
 		{
-			
+			min-height: 200px;
 		}
 	</style>
 
@@ -39,23 +39,18 @@
 					<div class="card-content">
 						<div class="row">
 							<div class="col s12">
-								<h5 >Calculadora mensalidade escolar proporcional</h5>
+								<h5 >Mensalidade proporcional</h5>
 								<p class="caption">
-									Qual atitudes a escola de seu filho tomou com o retorno das aulas?
+									Imagine a seguinte situação: Você contrata um professor para ensinar seu filho a tocar um instrumento musical e combina previamente que seriam 2 aulas semanais de 1hr e meia, totalizando 3hr por semana.<br />
+									Este professor cobra R$100,00 por hora/aula, totalizando R$300,00 semanais.<br />
+									Porém em determinada semana, por qualquer motivo que seja, somente uma aula de 1hr e meia é aplicada a seu filho. Quanto você teria de pagar a este professor nessa semana?
 								</p>
-								<p>
-									<ul style="padding-left: 3%">
-										<li style="list-style-type: circle !important">
-											Aumentou ou reduziu o tempo em sala de aula?
-										</li>
-										<li style="list-style-type: circle !important">
-											Incrementou ou descontou a diferença de tempo à mensalidade?
-										</li>
-									</ul>
+								<p class="caption mt-1">
+									Seguindo a lógoca matemática de que como somente metade das aulas foi aplicada você deve paga apenas metade do valor ao professor, correto?<br/>
+									Então, por que motivo este mesmo raciocínio não é aplicado às escolas particulares que reduziram sua carga horária de aulas aplicadas aos alunos?
 								</p>
-								<p>
-									Esta calcularoda serve para demonstrar de forma simples se a mensalidade que você paga atualmente está proporcional ao que era oferecido
-									antes da pandemia de COVID-19.
+								<p class="caption mt-1">
+									O objetivo desta calculadora, é demonstrar de forma prática, matematica e racional o quão justo (ou injusto) a escola de seu filho está sendo em relação as mudanças que ocorreram devido a pandemia de COVID-19.
 								</p>
 							</div>
 						</div>
@@ -91,7 +86,7 @@
 						
 						<div class="row">
 							<div class="input-field col s12">
-								<input id="mensalidade_a" name="mensalidade_a" value="530.00" type="text" class="validate mask-real" required="required">
+								<input id="mensalidade_a" name="mensalidade_a" value="590.00" type="text" class="validate mask-real" required="required">
 								<label for="mensalidade_a" class="">Mensalidade*</label>
 							</div>
 						</div>
@@ -122,7 +117,7 @@
 						
 						<div class="row">
 							<div class="input-field col s12">
-								<input id="mensalidade_b" name="mensalidade_b" value="590.00" type="text" class="validate mask-real" required="required">
+								<input id="mensalidade_b" name="mensalidade_b" value="472.00" type="text" class="validate mask-real" required="required">
 								<label for="mensalidade_b" class="">Mensalidade*</label>
 							</div>
 						</div>
@@ -208,7 +203,7 @@
 	<footer class="page-footer footer footer-static footer-dark gradient-45deg-blue-grey-blue-grey-invert gradient-shadow navbar-border navbar-shadow teste-footer">
 		<div class="footer-copyright">
 			<div class="container">
-				<span class="right">Projetado e Desenvolvido por <a href="https://www.linkedin.com/in/carlossantoswd/">Carlos Santos</a></span>
+				<span class="right">Projetado e Desenvolvido por <a href="https://bit.ly/carlossantoswd">Carlos Santos</a></span>
 			</div>
 		</div>
 	</footer>
@@ -270,7 +265,7 @@
 
 				$('.tempo_aula .dp48').html('arrow_downward');
 
-				$('.tempo_aula .tipo_diferenca').html('Redução de');
+				$('.tempo_aula .tipo_diferenca').html('Houve uma redução de');
 				$('.tempo_aula .porcentagem_diferenca').html(perc_diferenca_tempo+'% ');
 				$('.tempo_aula .tipo_dado').html('no tempo total');
 				$('.tempo_aula .cor-texto')
@@ -286,7 +281,7 @@
 
 				$('.tempo_aula .dp48').html('arrow_upward');
 
-				$('.tempo_aula .tipo_diferenca').html('Aumento de');
+				$('.tempo_aula .tipo_diferenca').html('Houve um aumento de');
 				$('.tempo_aula .porcentagem_diferenca').html(perc_diferenca_tempo+'% ');
 				$('.tempo_aula .tipo_dado').html('no tempo total');
 
@@ -311,7 +306,7 @@
 
 				$('.valor_mensalidade .dp48').html('arrow_downward');
 
-				$('.valor_mensalidade .tipo_diferenca').html('Redução de');
+				$('.valor_mensalidade .tipo_diferenca').html('Houve uma redução de');
 				$('.valor_mensalidade .porcentagem_diferenca').html(perc_diferenca_mensalidade+'% ');
 				$('.valor_mensalidade .tipo_dado').html('em relação ao ano anterior');
 
@@ -327,7 +322,7 @@
 
 				$('.valor_mensalidade .dp48').html('arrow_upward');
 
-				$('.valor_mensalidade .tipo_diferenca').html('Aumento de');
+				$('.valor_mensalidade .tipo_diferenca').html('Houve um aumento de');
 				$('.valor_mensalidade .porcentagem_diferenca').html(perc_diferenca_mensalidade+'% ');
 				$('.valor_mensalidade .tipo_dado').html('em relação ao ano anterior');
 
@@ -351,7 +346,7 @@
 
 				$('.mensalidade_proporcional .dp48').html('arrow_upward');
 
-				$('.mensalidade_proporcional .tipo_diferenca').html('Mensalidade deveria ser aumentada para');
+				$('.mensalidade_proporcional .tipo_diferenca').html('Baseado na porcentagem de mudança de tempo de aula a mensalidade deveria ser aumentada para');
 				$('.mensalidade_proporcional .porcentagem_diferenca').html('R$'+mensalidade_proporcional+' ');
 				$('.mensalidade_proporcional .tipo_dado').html('');
 				$('.mensalidade_proporcional .cor-texto')
@@ -366,7 +361,7 @@
 
 				$('.mensalidade_proporcional .dp48').html('arrow_downward');
 
-				$('.mensalidade_proporcional .tipo_diferenca').html('Mensalidade deveria ser reduzida para');
+				$('.mensalidade_proporcional .tipo_diferenca').html('Baseado na porcentagem de mudança de tempo de aula a mensalidade deveria ser reduzida para');
 				$('.mensalidade_proporcional .porcentagem_diferenca').html('R$'+mensalidade_proporcional+' ');
 				$('.mensalidade_proporcional .tipo_dado').html('');
 				$('.mensalidade_proporcional .cor-texto')
