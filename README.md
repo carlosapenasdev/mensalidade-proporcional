@@ -15,7 +15,7 @@ O objetivo desta calculadora, é demonstrar de forma prática, matematica e raci
 
 ## 🦸 Autor
 
-<a href="https://bit.ly/carlossantoswd">
+<a href="https://bit.ly/carlosapenasdev">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/41978568?s=460&u=82d4ecda844a069cf53d14060b1689c5bc22d42f&v=4" width="100px;" alt=""/>
  <br />
  <sub><b>Carlos Santos</b></sub></a>
@@ -27,7 +27,7 @@ O objetivo desta calculadora, é demonstrar de forma prática, matematica e raci
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-Feito com ❤️ por Carlos Santos 👋🏽 [Entre em contato!](https://bit.ly/carlossantoswd)
+Feito com ❤️ por Carlos Santos 👋🏽 [Entre em contato!](https://bit.ly/carlosapenasdev)
 
 README baseado em [tgmarinho/README-ecoleta](https://github.com/tgmarinho/README-ecoleta/blob/master/README-sem-logo.md)
 
